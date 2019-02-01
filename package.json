@@ -1,12 +1,19 @@
 {
   "name": "gatsby-remark-classes",
   "version": "0.1.0",
-  "description": "",
+  "description": "Automatically add class attributes to rendered markdown elements",
   "main": "src/index.js",
-  "keywords": ["gatsby"],
+  "keywords": ["gatsby", "gatsby-plugin"],
   "author": "Chris Greindl <chris.greindl@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "unist-util-visit": "^1.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisg86/gatsby-remark-classes"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisg86/gatsby-remark-classes/issues"
   }
 }
