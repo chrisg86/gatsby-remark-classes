@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-remark-classes",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "keywords": ["gatsby"],
+  "author": "Chris Greindl <chris.greindl@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "unist-util-visit": "^1.4.0"
+  }
+}
