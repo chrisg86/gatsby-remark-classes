@@ -1,6 +1,14 @@
 const visit = require('unist-util-visit');
 
-const applyClassesToNode = require('./src/applyClassesToNode');
+const applyClassesToNode = (node, classes) => {
+  node.data = node.data || {};
+  node.data.hProperties = node.data.hProperties || {};
+  node.data.hProperties.className = node.data.hProperties.className || [];
+
+  node.data.hProperties.className.push(classes);
+
+  return node;
+};
 
 module.exports = ({ markdownAST }, { classMap = {} }) => {
   // @see: https://github.com/syntax-tree/mdast#nodes
