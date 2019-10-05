@@ -11,9 +11,9 @@ const applyClassesToNode = (node, classes) => {
   return node;
 };
 
-module.exports = ({markdownAST}, {classMap = {}}) => {
+module.exports = ({ markdownAST }, { classMap = {} }) => {
   // @see: https://github.com/syntax-tree/mdast#nodes
-  visit(markdownAST, `heading`, node => {
+  visit(markdownAST, `heading`, (node) => {
     const selector = `h${node.depth}`;
 
     if (selector in classMap) {
@@ -21,7 +21,7 @@ module.exports = ({markdownAST}, {classMap = {}}) => {
     }
   });
 
-  visit(markdownAST, `blockquote`, node => {
+  visit(markdownAST, `blockquote`, (node) => {
     const selector = `blockquote`;
 
     if (selector in classMap) {
@@ -29,7 +29,7 @@ module.exports = ({markdownAST}, {classMap = {}}) => {
     }
   });
 
-  visit(markdownAST, `list`, node => {
+  visit(markdownAST, `list`, (node) => {
     let selector = `ul`;
     if (node.ordered) {
       selector = `ol`;
@@ -39,7 +39,7 @@ module.exports = ({markdownAST}, {classMap = {}}) => {
 
     // Recurse over the list's LIs if we're styling 'em
     if (childSelector in classMap) {
-      visitChildren(node => {
+      visitChildren((node) => {
         if (node.type === 'listItem') {
           applyClassesToNode(node, classMap[childSelector]);
           return;
@@ -52,7 +52,7 @@ module.exports = ({markdownAST}, {classMap = {}}) => {
     }
   });
 
-  visit(markdownAST, `table`, node => {
+  visit(markdownAST, `table`, (node) => {
     const selector = `table`;
 
     if (selector in classMap) {
@@ -60,7 +60,7 @@ module.exports = ({markdownAST}, {classMap = {}}) => {
     }
   });
 
-  visit(markdownAST, `paragraph`, node => {
+  visit(markdownAST, `paragraph`, (node) => {
     const selector = `paragraph`;
 
     if (selector in classMap) {
