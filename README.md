@@ -60,7 +60,7 @@ Will result in this HTML output:
 
 ## The classMap
 
-For supported selectors please have a look at the [Support section of unist-util-select](https://github.com/syntax-tree/unist-util-select#support)
+For supported selectors please please consult [syntax-tree/mdast](https://github.com/syntax-tree/mdast#nodes) for the node list and have a look at the [Support section of unist-util-select](https://github.com/syntax-tree/unist-util-select#support)
 
 ## Motivation
 
