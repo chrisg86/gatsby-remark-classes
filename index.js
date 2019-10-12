@@ -1,4 +1,4 @@
-const visit = require('unist-util-visit');
+const { selectAll } = require('unist-util-select');
 
 const applyClassesToNode = (node, classes) => {
   node.data = node.data || {};
@@ -11,28 +11,11 @@ const applyClassesToNode = (node, classes) => {
 };
 
 module.exports = ({ markdownAST }, { classMap = {} }) => {
-  // @see: https://github.com/syntax-tree/mdast#nodes
-  visit(markdownAST, `heading`, (node) => {
-    const selector = `h${node.depth}`;
+  Object.keys(classMap).forEach((selector) => {
+    const nodes = selectAll(selector, markdownAST);
 
-    if (selector in classMap) {
+    nodes.forEach((node) => {
       node = applyClassesToNode(node, classMap[selector]);
-    }
-  });
-
-  visit(markdownAST, `table`, (node) => {
-    const selector = `table`;
-
-    if (selector in classMap) {
-      node = applyClassesToNode(node, classMap[selector]);
-    }
-  });
-
-  visit(markdownAST, `paragraph`, (node) => {
-    const selector = `paragraph`;
-
-    if (selector in classMap) {
-      node = applyClassesToNode(node, classMap[selector]);
-    }
+    });
   });
 };

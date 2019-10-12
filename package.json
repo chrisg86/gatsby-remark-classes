@@ -10,7 +10,7 @@
   "author": "Chris Greindl <chris.greindl@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "unist-util-visit": "^1.4.0"
+    "unist-util-select": "^2.0.2"
   },
   "repository": {
     "type": "git",

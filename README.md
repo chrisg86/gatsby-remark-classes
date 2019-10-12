@@ -1,14 +1,17 @@
 # gatsby-remark-classes
+
 Automatically add class attributes to markdown elements.
 
 This is a plugin for [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/?=gatsby-transformer-remark).
 
 ## Install
+
 ```
 npm install --save gatsby-remark-classes
 ```
 
 ## Configure
+
 In your `gatsby-config.js`:
 
 ```js
@@ -20,9 +23,9 @@ In your `gatsby-config.js`:
         resolve: `gatsby-remark-classes`,
         options: {
           classMap: {
-            h1: 'title',
-            h2: 'subtitle',
-            paragraph: 'para'
+            "heading[depth=1]": "title-new",
+            "heading[depth=2]": "subtitle",
+            paragraph: "para",
           }
         }
       }
@@ -35,9 +38,11 @@ The rules above applied to the following markdown
 
 ```markdown
 # Main heading
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, odio.
 
 ## Sub header
+
 Lorem ipsum dolor sit amet, consectetur adipisicing.
 ```
 
@@ -45,14 +50,17 @@ Will result in this HTML output:
 
 ```html
 <h1 class="title">Main heading</h1>
-<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, odio.</p>
+<p class="para">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, odio.
+</p>
 
 <h2 class="subtitle">Sub header</h2>
 <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
 ```
 
 ## The classMap
-Right now you can add styles for **heading** elements (h1 - h6), **paragraphs** and **tables**. 
+
+For supported selectors please have a look at the [Support section of unist-util-select](https://github.com/syntax-tree/unist-util-select#support)
 
 ## Motivation
 
