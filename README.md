@@ -67,3 +67,15 @@ For supported selectors please have a look at the [Support section of unist-util
 Applying custom styles is also possible by just wrapping your converted markdown in a parent element and write the styles for that. This will however not work if you use atomic css in your project or a framework like Semantic UI or Tailwind CSS.
 
 With this project you define which classes get assigned to which element.
+
+## Upgrade guide
+
+When upgrading from version 0.x.x to 1.x.x, you will have to update the selectors in your `gatsby-config.js` file.
+
+Some common selectors:
+
+- `h1` is now `heading[depth=1]`
+- `h2` is now `heading[depth=2]`
+- `paragraph` is still `paragraph`
+
+Additionally you have now the chance to target child elements `code > pre` or even adjacent elements `paragraph + paragraph`. As stated above, please consult [syntax-tree/unist-util-select](https://github.com/syntax-tree/unist-util-select#support) for the complete list.

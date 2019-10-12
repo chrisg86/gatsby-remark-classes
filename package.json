@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-classes",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Automatically add class attributes to rendered markdown elements",
   "main": "index.js",
   "keywords": [
