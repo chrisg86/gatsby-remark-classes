@@ -76,6 +76,9 @@ Some common selectors:
 
 - `h1` is now `heading[depth=1]`
 - `h2` is now `heading[depth=2]`
+- `ul` is now `list[ordered=false]`
+- `ol` is now `list[ordered=true]`
+- `li` is now `listItem`
 - `paragraph` is still `paragraph`
 
-Additionally you have now the chance to target child elements `code > pre` or even adjacent elements `paragraph + paragraph`. As stated above, please consult [syntax-tree/unist-util-select](https://github.com/syntax-tree/unist-util-select#support) for the complete list.
+Additionally you have now the chance to target child elements `code > pre` or even adjacent elements `paragraph + paragraph`. As stated above, please consult [syntax-tree/mdast](https://github.com/syntax-tree/mdast#nodes) for the node list and [syntax-tree/unist-util-select](https://github.com/syntax-tree/unist-util-select#support) for pseudo selectors and syntax.
